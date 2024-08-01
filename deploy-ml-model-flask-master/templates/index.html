@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Breast Cancer Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Breast Cancer Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" required>
+
+            <label for="menopause">Menopause Status:</label>
+            <select id="menopause" name="menopause" required>
+                <option value="lt40">lt40</option>
+                <option value="ge40">ge40</option>
+                <option value="premeno">premeno</option>
+            </select>
+
+            <label for="tumor-size">Tumor Size:</label>
+            <input type="text" id="tumor-size" name="tumor-size" required>
+
+            <label for="inv-nodes">Involved Nodes:</label>
+            <input type="text" id="inv-nodes" name="inv-nodes" required>
+
+            <label for="node-caps">Node Caps:</label>
+            <select id="node-caps" name="node-caps" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="deg-malig">Degree of Malignancy:</label>
+            <input type="number" id="deg-malig" name="deg-malig" min="1" max="3" required>
+
+            <label for="breast">Breast:</label>
+            <select id="breast" name="breast" required>
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </select>
+
+            <label for="breast-quad">Breast Quadrant:</label>
+            <select id="breast-quad" name="breast-quad" required>
+                <option value="left-up">Left-Up</option>
+                <option value="left-low">Left-Low</option>
+                <option value="right-up">Right-Up</option>
+                <option value="right-low">Right-Low</option>
+                <option value="central">Central</option>
+            </select>
+
+            <label for="irradiat">Irradiation:</label>
+            <select id="irradiat" name="irradiat" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

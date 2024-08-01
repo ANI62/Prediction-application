@@ -1,0 +1,12 @@
+import pickle
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+# Example of saving model and scaler
+model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
+scaler = StandardScaler()
+
+# Save model
+pickle.dump(model, open('model.pkl', 'wb'))
+# Save scaler
+pickle.dump(scaler, open('scaler.pkl', 'wb'))
